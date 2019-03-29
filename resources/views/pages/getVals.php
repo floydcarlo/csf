@@ -3,6 +3,9 @@
 include ("connection.php");
 $result = mysqli_query($con, "SELECT * FROM tbl_user") or die($con->error);
 //pre_r($result)
+$_SESSION['message'] = '';
+//Data loading in unit
+
 ?>
 
 <html>
@@ -99,7 +102,7 @@ $result = mysqli_query($con, "SELECT * FROM tbl_user") or die($con->error);
   					<td> <?php echo $row['created_at']; ?> </td>
   					<td> <?php echo $row['updated_at']; ?> </td>
   					<td>
-  						<a href="Sign_up.php?edit=<?php echo $row['emp_id']; ?>" 
+  						<a href="admin_crud.php?edit=<?php echo $row['emp_id']; ?>" 
   							class = "btn btn-info">EDIT</a>
   					</td>	
   					<td>	
@@ -120,6 +123,8 @@ $result = mysqli_query($con, "SELECT * FROM tbl_user") or die($con->error);
 	  	echo '</pre>';
 	  }
   ?>
+
+
 </div>		
 </center>
 
